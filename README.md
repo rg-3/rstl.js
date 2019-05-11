@@ -1,4 +1,4 @@
-# rtsl.js
+# rstl.js
 
 1. <a href='#introduction'>Introduction</a>
 2. <a href='#examples'>Examples</a>
@@ -47,7 +47,7 @@ npm:
 yarn:
 
     $ yarn add rstl.js
-    
+
 ## <a id='license'>License</a> 
 
 This project uses the MIT license, see [LICENSE.txt](./LICENSE.txt) for details.
