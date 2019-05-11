@@ -18,7 +18,7 @@ values.
 
 __1.__
 
-Replace the 'name' variable with 'Emanuela'.
+Replace the 'name' variable with 'Emanuela'.  
 By default, HTML is escaped in strings that are substituted for a variable. 
 
 ```javascript
@@ -29,7 +29,7 @@ document.getElementById('greeting').innerHTML = greeting
 
 __2.__
 
-Replace the 'name' variable with '&lt;b&gt;Emanuela&lt;/b&gt;'. 
+Replace the 'name' variable with '&lt;b&gt;Emanuela&lt;/b&gt;'.  
 HTML is not escaped in this example.
 
 ```javascript
