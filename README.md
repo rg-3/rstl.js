@@ -42,8 +42,8 @@ document.getElementById('greeting').innerHTML = greeting
 
 With yarn/npm:
 
-    $ yarn add https://github.com/rg-3/rstl.js
-    $ npm i https://github.com/rg-3/rstl.js
+    $ yarn add rstl.js
+    $ npm i --save rstl.js
 
 ## <a id='license'>License</a> 
 
