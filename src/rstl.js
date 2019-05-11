@@ -15,8 +15,8 @@ const escapeHTML = (string) => {
 /*
   Really Small Template Language (rstl.js) is a small function that implements
   a template language, it is similar to mustache.js but a lot smaller and with 
-  less features.
-
+  less features. 
+  
   Usage:
     const greeting = rstl('Hi, {{name}}.', {name: 'Robert'})
     el.innerHTML = greeting
