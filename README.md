@@ -40,11 +40,14 @@ document.getElementById('greeting').innerHTML = greeting
 
 ## <a id='install'>Install</a>
 
-With yarn/npm:
+npm:
 
-    $ yarn add rstl.js
     $ npm i --save rstl.js
 
+yarn:
+
+    $ yarn add rstl.js
+    
 ## <a id='license'>License</a> 
 
 This project uses the MIT license, see [LICENSE.txt](./LICENSE.txt) for details.
