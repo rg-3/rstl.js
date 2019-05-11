@@ -18,7 +18,7 @@ const escapeHTML = (string) => {
   less features.
 
   Usage:
-    const greeting = rstl('Hello, {{name}}.', {name: 'Robert'}) 
+    const greeting = rstl('Hello, {{name}}.', {name: 'Robert'})
     el.innerHTML = greeting
 */
 export default function (template, props, options={}) {
