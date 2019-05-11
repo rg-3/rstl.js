@@ -14,20 +14,22 @@ const escapeHTML = (string) => {
 
 /*
   Really Small Template Language (rstl.js) is a small function that implements
-  a template language, similar to mustache.js but a lot smaller and with less 
-  features.
-
-  It replaces placeholder variables with one or more string values.
-
+  a template language, it is similar to mustache.js but a lot smaller and with 
+  less features. 
+  
   Usage:
-    const greeting = rstl('Hello, {{name}}.', {name: 'Robert'}) 
+    const greeting = rstl('Hi, {{name}}.', {name: 'Robert'})
+    el.innerHTML = greeting
+
+    const greeting = rstl('Hi, {{name}}.', {name:  '<b>Robert</b>'}, {escapeHTML: false})
     el.innerHTML = greeting
 */
-export default function (template, variables, escapeHTML=true) {
+export default function (template, props, options={}) {
+  const escapeHTML = options.escapeHTML === undefined ? true : options.escapeHTML
   for (let prop in variables) {
     if (variables.hasOwnProperty(prop)) {
       let regexp = new RegExp(`{{${prop}}}`, 'g')
-      let value = escapeHTML ? escapeHTML(variables[prop]) : variables[prop]
+      let value = escapeHTML ? escapeHTML(props[prop]) : props[prop]
       template = template.replace(regexp, value)
     }
   }
