@@ -18,11 +18,11 @@ const escapeHTML = (string) => {
   less features. 
   
   Usage:
-    const greeting = rstl('Hi, {{name}}.', {name: 'Robert'})
-    el.innerHTML = greeting
+    const greeting = rstl('Hi, {{name}}.', {name: 'Emanuela'})
+    document.getElementById('greeting').innerHTML = greeting
 
-    const greeting = rstl('Hi, {{name}}.', {name:  '<b>Robert</b>'}, {escapeHTML: false})
-    el.innerHTML = greeting
+    const greeting = rstl('Hi, {{name}}.', {name:  '<b>Emanuela</b>'}, {escapeHTML: false})
+    document.getElementById('greeting').innerHTML = greeting
 */
 export default function (template, props, options={}) {
   const escapeHTML = options.escapeHTML === undefined ? true : options.escapeHTML

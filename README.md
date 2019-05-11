@@ -29,7 +29,7 @@ document.getElementById('greeting').innerHTML = greeting
 
 __2.__
 
-Replace the 'name' variable with '<b>Emanuela</b>'. 
+Replace the 'name' variable with '&lt,b&gt,Emanuela&lt;/b&gt;'. 
 HTML is not escaped in this example.
 
 ```javascript
