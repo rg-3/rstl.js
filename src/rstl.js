@@ -26,8 +26,8 @@ const escapeHTML = (string) => {
 */
 export default function (template, props, options={}) {
   const escapeHTML = options.escapeHTML === undefined ? true : options.escapeHTML
-  for (let prop in props) {
-    if (props.hasOwnProperty(prop)) {
+  for (let prop in variables) {
+    if (variables.hasOwnProperty(prop)) {
       let regexp = new RegExp(`{{${prop}}}`, 'g')
       let value = escapeHTML ? escapeHTML(props[prop]) : props[prop]
       template = template.replace(regexp, value)
