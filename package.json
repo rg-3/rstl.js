@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/rg-3/rstl.js.git"
   },
+  "scripts": {
+    "test": "./node_modules/jasmine/bin/jasmine.js"
+  },
   "author": {
     "name": "Robert Gleeson",
     "email": "1xab@protonmail.com",
