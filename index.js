@@ -7,7 +7,7 @@ const escapeTable = {
 }
 
 const escapeHTML = (string) => {
-  return string.replace(new Regexp(/[<>&"']/, 'g'), (chr) => {
+  return string.replace(new RegExp(/[<>&"']/, 'g'), (chr) => {
     return escapeTable[chr]
   })
 }
@@ -24,12 +24,12 @@ const escapeHTML = (string) => {
     const greeting = rstl('Hi, {{name}}.', {name:  '<b>Emanuela</b>'}, {escapeHTML: false})
     document.getElementById('greeting').innerHTML = greeting
 */
-export default function (template, props, options={}) {
-  const escapeHTML = options.escapeHTML === undefined ? true : options.escapeHTML
+module.exports = function (template, props, options={}) {
+  const escape = options.escapeHTML === undefined ? true : options.escapeHTML
   for (let prop in props) {
     if (props.hasOwnProperty(prop)) {
       let regexp = new RegExp(`{{${prop}}}`, 'g')
-      let value = escapeHTML ? escapeHTML(props[prop]) : props[prop]
+      let value = escape ? escapeHTML(props[prop]) : props[prop]
       template = template.replace(regexp, value)
     }
   }
