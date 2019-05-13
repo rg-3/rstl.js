@@ -1,5 +1,4 @@
 const rstl = require('../index')
-
 describe('rstl', () => {
   it('substitutes a variable with a value', () => {
     const subject = rstl('Hi, {{name}}', {name: 'Emanuela'})
