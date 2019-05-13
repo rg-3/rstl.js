@@ -1,4 +1,4 @@
-const rstl = require('../index')
+const rstl = require('../src/index')
 describe('rstl', () => {
   it('substitutes a variable with a value', () => {
     const subject = rstl('Hi, {{name}}', {name: 'Emanuela'})

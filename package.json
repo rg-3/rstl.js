@@ -3,6 +3,7 @@
   "version": "1.0.5",
   "description": "Really Small Template Language (rstl.js) is a small function that implements a template language, it is similar to mustache.js but a lot smaller and with less features.",
   "license": "MIT",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/rg-3/rstl.js.git"
