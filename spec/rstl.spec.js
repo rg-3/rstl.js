@@ -19,4 +19,9 @@ describe('rstl', () => {
     const subject = rstl('Hi, {{name}}. How are you {{name}}?', {name: 'Emanuela'})
     expect(subject).toBe('Hi, Emanuela. How are you Emanuela?')
   })
+
+  it('substitutes multiple variables', () => {
+    const subject = rstl('Hi. My name is {{name}} and I am {{age}}.', {name: 'Emanuela', age: 25})
+    expect(subject).toBe('Hi. My name is Emanuela and I am 25.')
+  })
 })
