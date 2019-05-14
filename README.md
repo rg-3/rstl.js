@@ -22,8 +22,8 @@ Replace the 'name' variable with 'Emanuela'.
 By default, HTML is escaped in strings that are substituted for a variable. 
 
 ```javascript
-import rstl from 'rstl'
-const greeting = rstl('Hi, {{name}}.', {name: 'Emanuela'})
+const rstl = require('rstl')
+const greeting = rstl('Hi. My name is {{name}}.', {name: 'Emanuela'})
 document.getElementById('greeting').innerHTML = greeting
 ```
 
@@ -33,8 +33,18 @@ Replace the 'name' variable with '&lt;b&gt;Emanuela&lt;/b&gt;'.
 HTML is not escaped in this example.
 
 ```javascript
-import rstl from 'rstl'
-const greeting = rstl('Hi, {{name}}.', {name: '<b>Emanuela</b>'}, {escapeHTML: false})
+const rstl = require('rstl')
+const greeting = rstl('Hi. My name is {{name}}.', {name: '<b>Emanuela</b>'}, {escapeHTML: false})
+document.getElementById('greeting').innerHTML = greeting
+```
+
+__3.__
+
+Replace the 'name' variable and the 'age' variable with 'Emauela' and '25'.
+
+```javascript
+const rstl = require('rstl')
+const greeting = rstl('Hi. My name is {{name}} and I am {{age}}.', {name: 'Emanuela' age: 25})
 document.getElementById('greeting').innerHTML = greeting
 ```
 
