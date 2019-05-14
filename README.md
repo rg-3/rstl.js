@@ -16,6 +16,9 @@ values.
 
 ## <a id='examples'>Examples</a> 
 
+> The examples assume NodeJS or a module bundler like webpack or browserify is being used.  
+> If you are using `dist/rstl.js` or `dist/rstl.min.js` then `window.rstl()` will be available.
+
 __1.__
 
 Replace the 'name' variable with 'Emanuela'.  

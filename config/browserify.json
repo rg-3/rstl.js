@@ -1,0 +1,10 @@
+{
+  "rstl.js": {
+    "src": "src/browser.js",
+    "dest": "dist/rstl.js"
+  },
+  "options": {
+    "transform": [["babelify", {"presets": ["es2015"]}]],
+    "browserifyOptions" : {"paths": ["./src"]}
+  }
+}
