@@ -44,7 +44,7 @@ Replace the 'name' variable and the 'age' variable with 'Emauela' and '25'.
 
 ```javascript
 const rstl = require('rstl')
-const greeting = rstl('Hi. My name is {{name}} and I am {{age}}.', {name: 'Emanuela' age: 25})
+const greeting = rstl('Hi. My name is {{name}} and I am {{age}}.', {name: 'Emanuela', age: 25})
 document.getElementById('greeting').innerHTML = greeting
 ```
 
