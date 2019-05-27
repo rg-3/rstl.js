@@ -12,7 +12,7 @@ a template language, it is similar to mustache.js but a lot smaller and with
 less features.
 
 In a nutshell, rtjs.js replaces placeholder variable(s) with one or more string 
-values.
+values that can be provided directly as strings or through a function call.
 
 ## <a id='examples'>Examples</a> 
 
@@ -26,7 +26,7 @@ By default, HTML is escaped in strings that are substituted for a variable.
 
 ```javascript
 const rstl = require('rstl')
-const greeting = rstl('Hi. My name is {{name}}.', {name: 'Emanuela'})
+const greeting = rstl('Hello {{name}}.', {name: 'Emanuela'})
 document.getElementById('greeting').innerHTML = greeting
 ```
 
@@ -37,7 +37,7 @@ HTML is not escaped in this example.
 
 ```javascript
 const rstl = require('rstl')
-const greeting = rstl('Hi. My name is {{name}}.', {name: '<b>Emanuela</b>'}, {escapeHTML: false})
+const greeting = rstl('Hello {{name}}.', {name: '<b>Emanuela</b>'}, {escapeHTML: false})
 document.getElementById('greeting').innerHTML = greeting
 ```
 
@@ -47,7 +47,17 @@ Replace the 'name' variable and the 'age' variable with 'Emauela' and '25'.
 
 ```javascript
 const rstl = require('rstl')
-const greeting = rstl('Hi. My name is {{name}} and I am {{age}}.', {name: 'Emanuela', age: 25})
+const greeting = rstl('Hello {{name}} and I am {{age}}.', {name: 'Emanuela', age: 25})
+document.getElementById('greeting').innerHTML = greeting
+```
+
+__4.__
+
+Replace the 'name' variable by calling a function that returns a string.
+
+```javascript 
+const rstl = require('rstl')
+const greeting = rstl('Hello {{name}}', {name: () => 'Emanuela'})
 document.getElementById('greeting').innerHTML = greeting
 ```
 

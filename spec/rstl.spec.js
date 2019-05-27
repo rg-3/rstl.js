@@ -24,4 +24,9 @@ describe('rstl', () => {
     const subject = rstl('Hi. My name is {{name}} and I am {{age}}.', {name: 'Emanuela', age: 25})
     expect(subject).toBe('Hi. My name is Emanuela and I am 25.')
   })
+
+  it('substitutes a function for a string', () => {
+    const subject = rstl('Hello, {{name}}', {name: () => 'Robert'})
+    expect(subject).toBe('Hello, Robert')
+  })
 })

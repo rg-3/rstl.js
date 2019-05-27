@@ -23,12 +23,16 @@ const escapeHTML = (string) => {
 
     const greeting = rstl('Hi, {{name}}.', {name:  '<b>Emanuela</b>'}, {escapeHTML: false})
     document.getElementById('greeting').innerHTML = greeting
+
+    const greeting = rstl('Hello {{name}}', {name: function() {
+      return 'Robert'
+    }})
 */
 module.exports = function (template, props, options={}) {
   const escape = options.escapeHTML === undefined ? true : options.escapeHTML
   for (let prop in props) {
     if (props.hasOwnProperty(prop)) {
-      let value = String(props[prop])
+      let value = String(typeof(props[prop]) === 'function' ? props[prop]() : props[prop])
       let regexp = new RegExp(`{{${prop}}}`, 'g')
       template = template.replace(regexp, escape ? escapeHTML(value) : value)
     }
