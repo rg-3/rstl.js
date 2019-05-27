@@ -5,6 +5,8 @@
 3. <a href='#install'>Install</a>
 4. <a href='#license'>License </a>
 
+[![Build Status](https://travis-ci.org/rg-3/rstl.js.svg?branch=master)](https://travis-ci.org/rg-3/rstl.js)
+
 ## <a id='#introduction'>Introduction</a>
 
 Really Small Template Language (rstl.js) is a small function that implements
