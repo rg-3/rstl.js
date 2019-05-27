@@ -31,6 +31,10 @@ var escapeHTML = function escapeHTML(string) {
 
     const greeting = rstl('Hi, {{name}}.', {name:  '<b>Emanuela</b>'}, {escapeHTML: false})
     document.getElementById('greeting').innerHTML = greeting
+
+    const greeting = rstl('Hello {{name}}', {name: function() {
+      return 'Robert'
+    }})
 */
 module.exports = function (template, props) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
@@ -38,7 +42,7 @@ module.exports = function (template, props) {
   var escape = options.escapeHTML === undefined ? true : options.escapeHTML;
   for (var prop in props) {
     if (props.hasOwnProperty(prop)) {
-      var value = String(props[prop]);
+      var value = String(typeof props[prop] === 'function' ? props[prop]() : props[prop]);
       var regexp = new RegExp('{{' + prop + '}}', 'g');
       template = template.replace(regexp, escape ? escapeHTML(value) : value);
     }
