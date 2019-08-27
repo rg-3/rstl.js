@@ -10,46 +10,43 @@
 ## <a id='#introduction'>Introduction</a>
 
 Really Small Template Language (rstl.js) is a small function that implements
-a template language, it is similar to mustache.js but a lot smaller and with 
+a template language, it is similar to mustache.js but a lot smaller and with
 less features.
 
-In a nutshell, rtjs.js replaces placeholder variable(s) with one or more string 
-values that can be provided directly as strings or through a function call.
+## <a id='examples'>Examples</a>
 
-## <a id='examples'>Examples</a> 
-
-> The examples assume NodeJS or a module bundler like webpack or browserify is being used.  
+> The examples assume NodeJS or a module bundler like webpack or browserify is being used.
 > If you are using `dist/rstl.js` or `dist/rstl.min.js` then `window.rstl()` will be available.
 
 __1.__
 
-Replace the 'name' variable with 'Emanuela'.  
-By default, HTML is escaped in strings that are substituted for a variable. 
+Replace the 'name' variable with 'dude'.
+By default, HTML is escaped in strings that are substituted for a variable.
 
 ```javascript
 const rstl = require('rstl')
-const greeting = rstl('Hello {{name}}.', {name: 'Emanuela'})
+const greeting = rstl('Hello {{name}}.', {name: 'dude'})
 document.getElementById('greeting').innerHTML = greeting
 ```
 
 __2.__
 
-Replace the 'name' variable with '&lt;b&gt;Emanuela&lt;/b&gt;'.  
+Replace the 'name' variable with '&lt;b&gt;dude&lt;/b&gt;'.
 HTML is not escaped in this example.
 
 ```javascript
 const rstl = require('rstl')
-const greeting = rstl('Hello {{name}}.', {name: '<b>Emanuela</b>'}, {escapeHTML: false})
+const greeting = rstl('Hello {{name}}.', {name: '<b>dude</b>'}, {escapeHTML: false})
 document.getElementById('greeting').innerHTML = greeting
 ```
 
 __3.__
 
-Replace the 'name' variable and the 'age' variable with 'Emauela' and '25'.
+Replace the 'name' variable and the 'age' variables with 'dude' and '25'.
 
 ```javascript
 const rstl = require('rstl')
-const greeting = rstl('Hello {{name}} and I am {{age}}.', {name: 'Emanuela', age: 25})
+const greeting = rstl('Hello {{name}}. You look around {{age}}.', {name: 'dude', age: 25})
 document.getElementById('greeting').innerHTML = greeting
 ```
 
@@ -57,9 +54,9 @@ __4.__
 
 Replace the 'name' variable by calling a function that returns a string.
 
-```javascript 
+```javascript
 const rstl = require('rstl')
-const greeting = rstl('Hello {{name}}', {name: () => 'Emanuela'})
+const greeting = rstl('Hello {{name}}', {name: () => 'dude'})
 document.getElementById('greeting').innerHTML = greeting
 ```
 
@@ -73,6 +70,6 @@ yarn:
 
     $ yarn add rstl.js
 
-## <a id='license'>License</a> 
+## <a id='license'>License</a>
 
-This project uses the MIT license, see [LICENSE.txt](./LICENSE.txt) for details.
+This project uses the MIT license, please see [LICENSE.txt](./LICENSE.txt) for details.
