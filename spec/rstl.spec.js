@@ -1,4 +1,4 @@
-import rstl from '../src/rstl.js';
+const rstl = require('../src/rstl.js');
 
 describe('rstl', () => {
   it('substitutes a variable with a value', () => {

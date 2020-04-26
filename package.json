@@ -1,16 +1,15 @@
 {
   "name": "@rg-3/rstl.js",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A small template language implemented as a small function.",
   "license": "MIT",
-  "main": "src/rstl.js",
-  "type": "module",
+  "main": "src/rstl.mjs",
   "repository": {
     "type": "git",
     "url": "https://github.com/rg-3/rstl.js.git"
   },
   "scripts": {
-    "test": "./node_modules/jasmine-es6/bin/jasmine.js"
+    "test": "./node_modules/jasmine/bin/jasmine.js"
   },
   "author": {
     "name": "Robert Gleeson",
@@ -34,7 +33,9 @@
     "babelify": "^7.3.0",
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
-    "grunt-contrib-uglify": "^3.0.1",
-    "jasmine-es6": "^0.4.3"
+    "grunt-contrib-uglify": "^3.0.1"
+  },
+  "dependencies": {
+    "jasmine": "^3.5.0"
   }
 }
