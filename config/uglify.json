@@ -1,5 +1,8 @@
 {
+  "options": {
+    "banner": "/* rstl v<%= grunt.config.package.version %> (https://github.com/rg-3/rstl.js) */"
+  },
   "rstl.min.js": {
-    "files": {"dist/rstl.min.js": "dist/rstl.min.js"}
+    "files": {"dist/rstl.min.js": ["dist/rstl.min.js"]}
   }
 }
