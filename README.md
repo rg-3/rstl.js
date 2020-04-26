@@ -9,67 +9,47 @@
 
 ## <a id='#introduction'>Introduction</a>
 
-Really Small Template Language (rstl.js) is a small function that implements
-a template language, it is similar to mustache.js but a lot smaller and with
-less features.
+A small template language implemented as a small function.
 
 ## <a id='examples'>Examples</a>
 
-> The examples assume NodeJS or a module bundler like webpack or browserify is being used.
-> If you are using `dist/rstl.js` or `dist/rstl.min.js` then `window.rstl()` will be available.
-
 __1.__
 
-Replace the 'name' variable with 'dude'.
-By default, HTML is escaped in strings that are substituted for a variable.
+The following example performs a simple substitution, replacing `{{longName}}`
+with the text `Really Small Template Language`:
 
 ```javascript
-const rstl = require('rstl')
-const greeting = rstl('Hello {{name}}.', {name: 'dude'})
-document.getElementById('greeting').innerHTML = greeting
+import rstl from 'rstl.js';
+const variables = {longName: '<b>Really Small Template Language</b>'};
+const message = rstl('rstl stands for {{longName}}', variables);
+console.log(message);
 ```
 
 __2.__
 
-Replace the 'name' variable with '&lt;b&gt;dude&lt;/b&gt;'.
-HTML is not escaped in this example.
+By default HTML input is escaped from the string that the `rstl` function returns,
+this can be disabled by setting the `escapeHTML` option to false. The following
+example demonstrates that:
 
 ```javascript
-const rstl = require('rstl')
-const greeting = rstl('Hello {{name}}.', {name: '<b>dude</b>'}, {escapeHTML: false})
-document.getElementById('greeting').innerHTML = greeting
-```
-
-__3.__
-
-Replace the 'name' variable and the 'age' variables with 'dude' and '25'.
-
-```javascript
-const rstl = require('rstl')
-const greeting = rstl('Hello {{name}}. You look around {{age}}.', {name: 'dude', age: 25})
-document.getElementById('greeting').innerHTML = greeting
-```
-
-__4.__
-
-Replace the 'name' variable by calling a function that returns a string.
-
-```javascript
-const rstl = require('rstl')
-const greeting = rstl('Hello {{name}}', {name: () => 'dude'})
-document.getElementById('greeting').innerHTML = greeting
+import rstl from 'rstl.js';
+const variables = {longName: '<b>Really Small Template Language</b>'};
+const message = rstl('rstl stands for {{longName}}', variables {escapeHTML: false});
+console.log(message);
 ```
 
 ## <a id='install'>Install</a>
 
-npm:
+If in a NPM or Yarn environment, either one of these should work:
 
-    $ npm i --save rstl.js
+    $ npm i --save @rg-3/rstl.js
+    $ yarn add @rg-3/rstl.js
 
-yarn:
+If you're in a browser environment without NPM or Yarn, you can save [dist/rstl.min.js](https://github.com/rg-3/rstl.js/blob/master/dist/rstl.min.js)
+to your project and link to it from a `<script>` tag. It has been transpiled to ES5,
+and adds `window.rstl`.
 
-    $ yarn add rstl.js
 
 ## <a id='license'>License</a>
 
-This project uses the MIT license, please see [LICENSE.txt](./LICENSE.txt) for details.
+MIT license. See [./LICENSE.txt](./LICENSE.txt).

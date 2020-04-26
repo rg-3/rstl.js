@@ -1,7 +1,7 @@
 {
   "rstl.js": {
     "src": "src/browser.js",
-    "dest": "dist/rstl.js"
+    "dest": "dist/rstl.min.js"
   },
   "options": {
     "transform": [["babelify", {"presets": ["es2015"]}]],

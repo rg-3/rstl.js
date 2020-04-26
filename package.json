@@ -1,15 +1,16 @@
 {
   "name": "rstl.js",
-  "version": "1.2.0",
-  "description": "Really Small Template Language (rstl.js) is a small function that implements a template language, it is similar to mustache.js but a lot smaller and with less features.",
+  "version": "2.0.0",
+  "description": "A small template language implemented as a small function.",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "src/rstl.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/rg-3/rstl.js.git"
   },
   "scripts": {
-    "test": "./node_modules/jasmine/bin/jasmine.js"
+    "test": "./node_modules/jasmine-es6/bin/jasmine.js"
   },
   "author": {
     "name": "Robert Gleeson",
@@ -34,6 +35,6 @@
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-uglify": "^3.0.1",
-    "jasmine": "^3.4.0"
+    "jasmine-es6": "^0.4.3"
   }
 }

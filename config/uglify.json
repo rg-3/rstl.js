@@ -1,5 +1,5 @@
 {
   "rstl.min.js": {
-    "files": {"dist/rstl.min.js": "dist/rstl.js"}
+    "files": {"dist/rstl.min.js": "dist/rstl.min.js"}
   }
 }

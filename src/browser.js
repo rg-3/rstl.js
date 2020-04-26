@@ -1,1 +1,0 @@
-window.rstl = require('./index')
