@@ -1,5 +1,5 @@
 {
-  "name": "rstl.js",
+  "name": "@rg-3/rstl.js",
   "version": "2.0.0",
   "description": "A small template language implemented as a small function.",
   "license": "MIT",

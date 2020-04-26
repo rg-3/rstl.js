@@ -20,7 +20,7 @@ with the text `Really Small Template Language`:
 
 ```javascript
 import rstl from 'rstl.js';
-const variables = {longName: '<b>Really Small Template Language</b>'};
+const variables = {longName: 'Really Small Template Language'};
 const message = rstl('rstl stands for {{longName}}', variables);
 console.log(message);
 ```
