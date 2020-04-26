@@ -1,6 +1,6 @@
 {
   "rstl.js": {
-    "src": "src/browser.js",
+    "src": "src/rstl/window-global.js",
     "dest": "dist/rstl.min.js"
   },
   "options": {
