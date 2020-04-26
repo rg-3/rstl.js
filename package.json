@@ -1,6 +1,6 @@
 {
   "name": "@rg-3/rstl.js",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "A small template language implemented as a small function.",
   "license": "MIT",
   "main": "src/rstl.mjs",

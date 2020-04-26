@@ -12,7 +12,7 @@ const escapeHTML = (string) => {
   });
 };
 
-module.exports = function(template, props, options={}) {
+const rstl = function(template, props, options={}) {
   const escape = options.escapeHTML === undefined ? true : options.escapeHTML
   for (let prop in props) {
     if (props.hasOwnProperty(prop)) {
@@ -23,3 +23,6 @@ module.exports = function(template, props, options={}) {
   }
   return template;
 };
+
+module.exports = rstl;
+module.exports.default = rstl;
