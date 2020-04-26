@@ -34,7 +34,7 @@ example demonstrates that:
 ```javascript
 import rstl from 'rstl.js';
 const variables = {longName: '<b>Really Small Template Language</b>'};
-const message = rstl('rstl stands for {{longName}}', variables {escapeHTML: false});
+const message = rstl('rstl stands for {{longName}}', variables, {escapeHTML: false});
 console.log(message);
 ```
 
