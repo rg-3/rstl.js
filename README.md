@@ -40,10 +40,16 @@ console.log(message);
 
 ## <a id='install'>Install</a>
 
-If in a NPM or Yarn environment, either one of these should work:
+__NPM / Yarn environment__
+
+If in a NPM or Yarn environment, either one of the following commands should work.
+Note that `require` or `import` should use `@rg-3/rstl.js` instead of just `rstl.js`
+like the examples have shown.
 
     $ npm i --save @rg-3/rstl.js
     $ yarn add @rg-3/rstl.js
+
+__Old school__
 
 If you're in a browser environment without NPM or Yarn, you can save [dist/rstl.min.js](https://github.com/rg-3/rstl.js/blob/master/dist/rstl.min.js)
 to your project and link to it from a `<script>` tag. It has been transpiled to ES5,

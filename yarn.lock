@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@rg-3/rstl.js@^2.3.6":
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/@rg-3/rstl.js/-/rstl.js-2.3.6.tgz#b46cc9496f8c40d2f08531bb62ac227a50b935a0"
+  integrity sha512-OS4lrsKnbrsCvQ8R6HIHDYAQan9RO7tp5HeLWTxz8oTtP/YrQpaOIvB9ZyLgj3wheNSWQA/tic7bczkBj9bKMg==
+
 JSONStream@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-0.10.0.tgz#74349d0d89522b71f30f0a03ff9bd20ca6f12ac0"

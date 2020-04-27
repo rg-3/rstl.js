@@ -1,9 +1,9 @@
 {
   "name": "@rg-3/rstl.js",
-  "version": "2.3.3",
+  "version": "2.3.8",
   "description": "A small template language implemented as a small function.",
   "license": "MIT",
-  "main": "src/rstl.mjs",
+  "main": "src/rstl.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/rg-3/rstl.js.git"
@@ -33,9 +33,7 @@
     "babelify": "^7.3.0",
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
-    "grunt-contrib-uglify": "^3.0.1"
-  },
-  "dependencies": {
+    "grunt-contrib-uglify": "^3.0.1",
     "jasmine": "^3.5.0"
   }
 }

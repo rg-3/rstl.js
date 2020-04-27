@@ -13,7 +13,7 @@ const escapeHTML = (string) => {
 };
 
 const rstl = function(template, props, options={}) {
-  const escape = options.escapeHTML === undefined ? true : options.escapeHTML
+  const escape = options.escapeHTML === undefined ? true : options.escapeHTML;
   for (let prop in props) {
     if (props.hasOwnProperty(prop)) {
       const value = String(typeof(props[prop]) === 'function' ? props[prop]() : props[prop]);
