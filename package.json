@@ -12,7 +12,7 @@
     "test": "./node_modules/jasmine/bin/jasmine.js"
   },
   "author": {
-    "name": "Robert Gleeson",
+    "name": "rg",
     "email": "1aab@protonmail.com",
     "url": "https://github.com/rg-3"
   },
