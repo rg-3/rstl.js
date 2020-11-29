@@ -1,8 +1,8 @@
 MIT License
 
-Copyright 2018
-Robert Gleeson
-https://gitlab.com/rg-3/tinyhttp.js
+Copyright 2020
+rg
+https://gitlab.com/rg-3/rstl.js
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
