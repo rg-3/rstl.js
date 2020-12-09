@@ -1,3 +1,5 @@
+const escapeHTML   = (str) => str.replace(new RegExp(/[<>&"']/, 'g'), (chr) => escapeTable[chr]);
+
 const escapeTable = {
   '<' : '&lt;'  ,
   '>' : '&gt;'  ,
@@ -6,20 +8,23 @@ const escapeTable = {
   "'" : '&#039;'
 };
 
-const escapeHTML = (string) => {
-  return string.replace(new RegExp(/[<>&"']/, 'g'), (chr) => {
-    return escapeTable[chr];
-  });
+const getVariable = (name, variables) => {
+  const value = variables[name];
+  if(typeof(value) === 'function') {
+    return value()
+  } else {
+    return value;
+  }
 };
 
-const rstl = function(template, props, options={}) {
+const rstl = function(template, variables, options={}) {
   const escape = options.escapeHTML === undefined ? true : options.escapeHTML;
-  for (let prop in props) {
-    if (props.hasOwnProperty(prop)) {
-      const value = String(typeof(props[prop]) === 'function' ? props[prop]() : props[prop]);
-      const regexp = new RegExp(`{{${prop}}}`, 'g');
-      template = template.replace(regexp, escape ? escapeHTML(value) : value);
-    }
+  for (let name in variables) {
+    if (!variables.hasOwnProperty(name)) { continue; }
+    if (!/^[a-zA-Z0-9_]+$/.test(name)) { throw new Error(`"${name}" is not a valid variable name`); }
+    const value  = String(getVariable(name, variables));
+    const regexp = new RegExp(`{{${name}}}`, 'g');
+    template = template.replace(regexp, escape ? escapeHTML(value) : value);
   }
   return template;
 };
