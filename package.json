@@ -1,6 +1,6 @@
 {
   "name": "@rg-3/rstl.js",
-  "version": "2.3.8",
+  "version": "2.4.0",
   "description": "rstl.js is a **R**eally **S**imple **T**emplate **L**anguage implemented as a simple function.",
   "license": "MIT",
   "main": "src/rstl.js",

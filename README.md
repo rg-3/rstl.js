@@ -45,6 +45,11 @@ import rstl from 'rstl.js';
 rstl('Hello, {{planet}}', {planet: '<b>Earth</b>'}, {escapeHTML: false}); // => "Hello, <b>Earth</b>"
 ```
 
+## Limitations
+
+A variable name can use the characters a-z, A-Z, and 0-9. If other characters are 
+used an error will be thrown.
+
 ## <a id='install'>Install</a>
 
 __NPM__
