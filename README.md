@@ -17,7 +17,7 @@ as a simple function.
 **#1**
 
 This example replaces `Hello, {{planet}}` with `Hello, Earth` by 
-substituting the variable name with the `Earth` value.
+substituting the variable name(`{{planet}}`) with the `Earth` value.
 
 ```javascript
 import rstl from 'rstl.js';
@@ -42,7 +42,7 @@ be disabled by providing the `escapeHTML` option:
 
 ```javascript
 import rstl from 'rstl.js';
-rstl('Hello, {{planet}}', {planet: '<b>Earth</b>'}, {escapeHTML: false}); // => "Hello, <b>Earth</b>"
+rstl('Hello, {{planet}}', {planet: '<b>Mars</b>'}, {escapeHTML: false}); // => "Hello, <b>Mars</b>"
 ```
 
 ## Limitations
