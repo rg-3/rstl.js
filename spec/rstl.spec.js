@@ -1,33 +1,33 @@
 const rstl = require('../src/rstl.js');
 
 describe('rstl', () => {
-  it('substitutes a variable with a value', () => {
-    const subject = rstl('{{name}}', {name: 'Dude'});
-    expect(subject).toBe('Dude');
+  it('substitutes a variable', () => {
+    const subject = rstl('Hello, {{planet}}', {planet: 'Earth'});
+    expect(subject).toBe('Hello, Earth');
   })
 
-  it('escapes HTML by default', () => {
-    const subject = rstl('{{name}}', {name: '<b>Dude</b>'});
-    expect(subject).toBe('&lt;b&gt;Dude&lt;/b&gt;');
+  it('escapes HTML', () => {
+    const subject = rstl('Hello, {{planet}}', {planet: '<b>Earth</b>'});
+    expect(subject).toBe('Hello, &lt;b&gt;Earth&lt;/b&gt;');
   })
 
-  it('does not escape HTML when asked not to', () => {
-    const subject = rstl('{{name}}', {name: '<b>Dude</b>'}, {escapeHTML: false});
-    expect(subject).toBe('<b>Dude</b>');
+  it('does not escape HTML', () => {
+    const subject = rstl('Hello, {{planet}}', {planet: '<b>Earth</b>'}, {escapeHTML: false});
+    expect(subject).toBe('Hello, <b>Earth</b>');
   })
 
   it('substitutes multiple instances of the same variable', () => {
-    const subject = rstl('{{name}}. How are you {{name}}?', {name: 'Dude'});
-    expect(subject).toBe('Dude. How are you Dude?');
+    const subject = rstl('Hello, {{planet}}. Did you know {{planet}} shines blue?', {planet: 'Earth'});
+    expect(subject).toBe('Hello, Earth. Did you know Earth shines blue?')
   });
 
-  it('substitutes multiple variables', () => {
-    const subject = rstl('My name is {{name}} and I am {{age}}.', {name: 'Dude', age: 25});
-    expect(subject).toBe('My name is Dude and I am 25.');
+  it('substitutes the return value of a function for a variable', () => {
+    const subject = rstl('Hello, {{planet}}', {planet: () => 'Earth'});
+    expect(subject).toBe('Hello, Earth');
   });
 
-  it('substitutes a function for a string', () => {
-    const subject = rstl('Hello, {{name}}', {name: () => 'Dudette'});
-    expect(subject).toBe('Hello, Dudette');
-  });
+  it('disallows variable names outside charset a-z, A-Z, 0-9 and _', () => {
+    const subject = () => rstl('Hello, {{foo bar}}', {'foo bar': 'baz'});
+    expect(subject).toThrow(new Error(`"foo bar" is not a valid variable name`));
+  })
 });
