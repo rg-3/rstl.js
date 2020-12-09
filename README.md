@@ -9,48 +9,48 @@
 
 ## <a id='#introduction'>Introduction</a>
 
-A small template language implemented as a small function.
+rstl.js is a **R**eally **S**imple **T**emplate **L**anguage implemented 
+as a simple function.
 
 ## <a id='examples'>Examples</a>
 
-__1.__
+**#1**
 
-The following example performs a simple substitution, replacing `{{name}}`
-with `Really Small Template Language`:
+This example replaces `Hello, {{planet}}` with `Hello, Earth` by 
+substituting the variable name with the `Earth` value.
 
 ```javascript
 import rstl from 'rstl.js';
-const variables = {name: 'Really Small Template Language'};
-console.log(rstl('rstl stands for {{name}}', variables));
+rstl('Hello, {{planet}}', {planet: 'Earth'}); // => "Hello, Earth"
 ```
 
-__2.__
+**#2**
 
-The following example demonstrates how a function can be used as the value of
-a variable:
+It's possible for a function to be passed as a variable's value. It will 
+be called by rstl and its return value inserted in place of the variable 
+name:
 
 ```javascript
 import rstl from 'rstl.js';
-const variables = {name: () => 'Really small template language'};
-console.log(rstl('rstl stands for {{name}}', variables));
+rstl('Hello, {{planet}}', {planet: () => 'Earth'}); // => "Hello, Earth"
 ```
 
-__3.__
+**#3**
 
-The following example demonstrates how to avoid escaping HTML:
+By default rstl will escape HTML entities from a variable's value, but it can 
+be disabled by providing the `escapeHTML` option: 
 
 ```javascript
 import rstl from 'rstl.js';
-const variables = {name: '<b>Really Small Template Language</b>'};
-console.log(rstl('rstl stands for {{name}}', variables, {escapeHTML: false}));
+rstl('Hello, {{planet}}', {planet: '<b>Earth</b>'}, {escapeHTML: false}); // => "Hello, <b>Earth</b>"
 ```
 
 ## <a id='install'>Install</a>
 
 __NPM__
 
-Note that the `require` or `import` of rstl.js should use `@rg-3/rstl.js` (instead
-of `rstl.js`)
+If you're in an NPM environment there's an NPM package to use.  
+The package should be required or imported as `@rg-3/rstl.js`.
 
     # npm users
     $ npm i --save @rg-3/rstl.js
